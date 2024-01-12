@@ -9,5 +9,6 @@ import (
 func RegisterWebRoutes(router *gin.RouterGroup) {
 	GroupV1 := new(v1.GroupV1)
 	webV1 := router.Group("/")
+	webV1.GET("/home", GroupV1.IndexController.Home)
 	webV1.GET("/", GroupV1.IndexController.Index)
 }
