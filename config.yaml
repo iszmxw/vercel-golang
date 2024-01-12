@@ -1,0 +1,71 @@
+# 项目基本配置
+
+## 应用名称
+APP_NAME: GoApi
+## 当前环境
+APP_ENV: dev
+## 用以生成链接
+APP_URL: http://127.0.0.1
+## 应用服务端口
+APP_PORT: 80
+# pprof 分析 打开后可以分析堆栈调用，cpu占用
+APP_PPROF: true
+# 是否启用https
+HTTPS: 0
+# 地区限制
+ADDRESS_LIMIT: true
+
+
+# 数据库连接信息
+DB_CONNECTION: mysql
+DB_HOST: db4free.net
+# 端口
+DB_PORT: 3306
+# 表名
+DB_DATABASE: vercel_golang
+# 用户名
+DB_USERNAME: vercel_golang
+# 密码
+DB_PASSWORD: 123456
+# 数据表前缀
+DB_PREFIX: t_
+
+
+# redis配置
+REDIS_HOST: ethical-walrus-49379.kv.vercel-storage.com
+# 没有密码，默认留空
+REDIS_PASSWORD: 9f9659as78sdf90as78qw7fsd45cfa3b918
+# 端口号
+REDIS_PORT: 6379
+# 默认用 0
+REDIS_DB: 0
+
+## 密码加密盐
+PW_SALT: xw2023-06-08
+
+# log 日志控制
+## mysql日志
+## mysql debug 日志
+LOG_MYSQL_DEBUG: true
+## mysql warn 日志
+LOG_MYSQL_ERROR: true
+## mysql error 日志
+LOG_MYSQL_WARN: true
+# 通知邮箱
+NOTIFY_EMAIL: mail@54zm.com
+
+
+
+
+# bark 通知配置
+bark:
+  url: https://api.day.app/
+  key:
+    mac: YaemvezPAqvc2ASewcP2KH
+    iphone: nPuDoXfXsMpVrDaqU9to88
+  logo: https://avatars.githubusercontent.com/u/135967790?s=400&u=0efb3cc947e9f0c2165c11f65f374524cb48915d&v=4
+
+wechat:
+  botUrl: http://106.52.198.173:8000
+  guid: 68d4ebef-f854-3387-ab40-7832d51dab25
+  BelongWx: xiaomg_zs

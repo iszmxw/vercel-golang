@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo -e "\033[35m 打包开始... \033[0m"
+
+appBuildDir=.
+
+# 一键打包服务
+
+# 1、打包 client 接口
+GOOS=linux GOARCH=amd64 go build -o $appBuildDir/app main.go
+
+echo -e "\033[35m Success... \033[0m"
+
+IP=$(curl -s ip.sb)
+
+echo "$IP"
+
+pwd
+

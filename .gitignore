@@ -1,0 +1,5 @@
+.vercel
+.idea
+logs/*
+.env
+.env.local
