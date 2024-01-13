@@ -2,6 +2,9 @@
 
 - 开发 golang 服务并且部署到 vercel
 
+[![Deploy with Vercel](https://vercel.com/button?utm_source=busiyi&utm_campaign=oss)](https://vercel.com/new/clone?utm_source=busiyi&utm_campaign=oss&repository-url=https://github.com/iszmxw/vercel-golang&env=CONFIG)
+
+
 ## 配置文件
 
 - 配置文件文 `json` 格式，`vercel` 后台设置环境变量 `CONFIG` 字段，字段内容如下
