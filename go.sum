@@ -20,8 +20,6 @@ github.com/andybalholm/cascadia v1.3.1 h1:nhxRkql1kdYCc8Snf7D5/D3spOX+dBgjA6u8x0
 github.com/andybalholm/cascadia v1.3.1/go.mod h1:R4bJ1UQfqADjvDa4P6HZHLh/3OxWWEqc0Sk8XGwHqvA=
 github.com/armon/consul-api v0.0.0-20180202201655-eb2c6b5be1b6/go.mod h1:grANhF5doyWs3UAsr3K4I6qtAmlQcZDesFNEHPZAzj8=
 github.com/atotto/clipboard v0.1.2 h1:YZCtFu5Ie8qX2VmVTBnrqLSiU9XOWwqNRmdT3gIQzbY=
-github.com/aws/aws-lambda-go v1.44.0 h1:Xp9PANXKsSJ23IhE4ths592uWTCEewswPhSH9qpAuQQ=
-github.com/aws/aws-lambda-go v1.44.0/go.mod h1:dpMpZgvWx5vuQJfBt0zqBha60q7Dd7RfgJv23DymV8A=
 github.com/axgle/mahonia v0.0.0-20180208002826-3358181d7394 h1:OYA+5W64v3OgClL+IrOD63t4i/RW7RqrAVl9LTZ9UqQ=
 github.com/axgle/mahonia v0.0.0-20180208002826-3358181d7394/go.mod h1:Q8n74mJTIgjX4RBBcHnJ05h//6/k6foqmgE45jTQtxg=
 github.com/benbjohnson/clock v1.1.0 h1:Q92kusRqC1XV2MjkWETPvjJVqKetz1OzxZB7mHJLju8=
@@ -330,8 +328,6 @@ github.com/ugorji/go/codec v1.2.11 h1:BMaWp1Bb6fHwEtbplGBGJ498wD+LKlNSl25MjdZY4d
 github.com/ugorji/go/codec v1.2.11/go.mod h1:UNopzCgEMSXjBc6AOMqYvWC1ktqTAfzJZUZgYf6w6lg=
 github.com/unrolled/secure v1.13.0 h1:sdr3Phw2+f8Px8HE5sd1EHdj1aV3yUwed/uZXChLFsk=
 github.com/unrolled/secure v1.13.0/go.mod h1:BmF5hyM6tXczk3MpQkFf1hpKSRqCyhqcbiQtiAF7+40=
-github.com/vercel/go-bridge v0.0.0-20221108222652-296f4c6bdb6d h1:yF16FifsUK1ZfRAiG8c3Sm2hM7PaJGtBduL3BzI7ZE4=
-github.com/vercel/go-bridge v0.0.0-20221108222652-296f4c6bdb6d/go.mod h1:RTTykQS0l8RDfOjATEreOpvPDo/yn1zW2nCCP8zBM7E=
 github.com/xiang90/probing v0.0.0-20190116061207-43a291ad63a2/go.mod h1:UETIi67q53MR2AWcXfiuqkDkRtnGDLqkBTpCHuJHxtU=
 github.com/xordataexchange/crypt v0.0.3-0.20170626215501-b2862e3d0a77/go.mod h1:aYKd//L2LvnjZzWKhF00oedf4jCCReLcmhLdhm1A27Q=
 github.com/xxjwxc/gormt v0.0.0-20230524090542-40b897dd21c8 h1:KZAxS0MCaL2eQk3OC+6HFtfD3YWps6eHgAd5B7/mC8A=

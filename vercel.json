@@ -5,5 +5,14 @@
       "src": "/(.*)",
       "dest": "/api/client.go"
     }
+  ],
+  "builds": [
+    {
+      "use": "@vercel/static",
+      "src": "templates/statics/**",
+      "config": {
+        "zeroConfig": true
+      }
+    }
   ]
 }
