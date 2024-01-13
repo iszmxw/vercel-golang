@@ -19,7 +19,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/api/client.go"
+      "dest": "/api/client"
     }
   ]
 }
