@@ -8,11 +8,19 @@
   ],
   "builds": [
     {
+      "use": "@vercel/go",
+      "src": "api/client.go",
+      "config": {
+        "zeroConfig": true
+      }
+    },
+    {
       "use": "@vercel/static",
       "src": "templates/statics/**",
       "config": {
         "zeroConfig": true
       }
+    },
     }
   ]
 }
