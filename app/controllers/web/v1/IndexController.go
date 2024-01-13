@@ -11,7 +11,7 @@ type IndexController struct {
 
 func (h *IndexController) Index(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.html", gin.H{
-		"title": "World!",
+		"title": "vercel-golang，Lest go",
 	})
 }
 
