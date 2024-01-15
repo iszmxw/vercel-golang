@@ -7,8 +7,6 @@ import (
 	conf "goapi/pkg/config"
 	"goapi/routes/client"
 	"goapi/routes/web"
-	"goapi/templates"
-	"html/template"
 	"net/http"
 )
 
@@ -29,8 +27,6 @@ func SetupRoute(router *gin.Engine) *gin.Engine {
 	})
 	// client 接口
 	client.RegisterClientRoutes(router.Group("/"))
-	_template, _ := template.ParseFS(templates.Default, "default/*.html")
-	router.SetHTMLTemplate(_template)
 	// web 相关页面
 	web.RegisterWebRoutes(router.Group("/"))
 	return router
