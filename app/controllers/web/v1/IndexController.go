@@ -22,7 +22,7 @@ func (h *IndexController) Home(c *gin.Context) {
 }
 
 func (h *IndexController) View(c *gin.Context) {
-	c.HTML(http.StatusOK, "view/view.html", gin.H{
+	c.HTML(http.StatusOK, "v/view.html", gin.H{
 		"title": "View",
 	})
 }
