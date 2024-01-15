@@ -20,3 +20,9 @@ func (h *IndexController) Home(c *gin.Context) {
 		"title": "我是 Home 页面，准备开始，Lest go!",
 	})
 }
+
+func (h *IndexController) View(c *gin.Context) {
+	c.HTML(http.StatusOK, "view/view.html", gin.H{
+		"title": "View",
+	})
+}
