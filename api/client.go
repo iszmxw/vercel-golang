@@ -30,6 +30,7 @@ func init() {
 	logger.Info("初始化 Redis")
 	bootstrap.SetupRedis(0)
 	app = gin.New()
+	bootstrap.SetupTemplate(app)
 	// Handling routing errors
 	app.NoRoute(func(c *gin.Context) {
 		sb := &strings.Builder{}
