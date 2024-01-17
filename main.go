@@ -35,7 +35,9 @@ func main() {
 	// 初始化路由绑定
 	logger.Info("加载 client 路由")
 	gin.SetMode(gin.ReleaseMode)
-	router := bootstrap.SetupRoute(gin.Default())
+	app := gin.Default()
+	bootstrap.SetupTemplate(app)
+	router := bootstrap.SetupRoute(app)
 	pprof.Register(router) // 开启 pprof
 	// 启动路由
 	logger.Info("启动路由")

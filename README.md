@@ -8,12 +8,15 @@
 
 ## 配置文件
 
-- [config.yaml](config.yaml) 为项目的主要配置文件，当不依赖 `vercel` 的时候可以使用此配置文件加载配置
+- [application.yaml](application.yaml) 为项目的主要配置文件，当不依赖 `vercel` 的时候可以使用此配置文件加载配置
 
 ```bash
 # 进入项目根目录
-# 修改 config.yaml
+# 修改 application.yaml
 # 数据库相关信息修改
+# 很重要的一步
+echo "DEV=1" > .env
+# 有上面的配置才会走 application.yaml
 # 修改好后就可以通过根目录 main.go 文件来启动开发
 go run main.go
 ```

@@ -18,7 +18,7 @@ ADDRESS_LIMIT: true
 
 # 数据库连接信息
 DB_CONNECTION: mysql
-DB_HOST: db4free.net
+DB_HOST: 10.10.10.1
 # 端口
 DB_PORT: 3306
 # 表名
@@ -32,9 +32,9 @@ DB_PREFIX: t_
 
 
 # redis配置
-REDIS_HOST: ethical-walrus-49379.kv.vercel-storage.com
+REDIS_HOST: 127.0.0.1
 # 没有密码，默认留空
-REDIS_PASSWORD: 9f9659as78sdf90as78qw7fsd45cfa3b918
+REDIS_PASSWORD:
 # 端口号
 REDIS_PORT: 6379
 # 默认用 0
@@ -66,6 +66,6 @@ bark:
   logo: https://avatars.githubusercontent.com/u/135967790?s=400&u=0efb3cc947e9f0c2165c11f65f374524cb48915d&v=4
 
 wechat:
-  botUrl: http://106.52.198.173:8000
+  botUrl: http://localhost:8000
   guid: 68d4ebef-f854-3387-ab40-7832d51dab25
   BelongWx: xiaomg_zs

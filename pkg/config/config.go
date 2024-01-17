@@ -6,7 +6,9 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/spf13/cast"
 	"github.com/spf13/viper"
+	"goapi/pkg/logger"
 	"os"
+	"strings"
 )
 
 // Viper Viper 库实例
@@ -19,16 +21,42 @@ type StrMap map[string]interface{}
 func init() {
 	// 加载环境变量配置文件
 	_ = godotenv.Load()
-	// 1、从环境变量读取配置文件
-	jsonConfig := os.Getenv("CONFIG")
-	fmt.Println("jsonConfig", jsonConfig)
-	// 2、 初始化 Viper 库
-	Viper = viper.New()
-	Viper.SetConfigType("json") // 设置配置文件的类型
-	// 3、创建io.Reader
-	err := Viper.ReadConfig(bytes.NewBuffer([]byte(jsonConfig)))
-	if err != nil {
-		panic(err)
+	if os.Getenv("DEV") == "1" {
+		// 读取本地文件 config.yaml
+		ConfigPath := "."
+		Num := 1
+	START:
+		// 1. 初始化 Viper 库
+		Viper = viper.New()
+		// 2. 设置文件名称
+		Viper.SetConfigName("application")
+		// 3. 配置类型，支持 "json", "toml", "yaml", "yml", "properties",
+		//             "props", "prop", "env", "dotenv"
+		Viper.SetConfigType("yaml")
+		// 4. 环境变量配置文件查找的路径，相对于 main.go
+		Viper.AddConfigPath(ConfigPath)
+		// 5. 开始读根目录下的 .env 文件，读不到会报错
+		err := Viper.ReadInConfig()
+		if err != nil {
+			if strings.Contains(err.Error(), "Not Found") && Num < 5 {
+				Num++ // 最多向上找五层目录，找不道就不找了
+				ConfigPath += "../"
+				goto START
+			}
+			logger.Error(err)
+		}
+	} else {
+		// 1、从环境变量读取配置文件
+		jsonConfig := os.Getenv("CONFIG")
+		fmt.Println("jsonConfig", jsonConfig)
+		// 2、 初始化 Viper 库
+		Viper = viper.New()
+		Viper.SetConfigType("json") // 设置配置文件的类型
+		// 3、创建io.Reader
+		err := Viper.ReadConfig(bytes.NewBuffer([]byte(jsonConfig)))
+		if err != nil {
+			panic(err)
+		}
 	}
 	// 4. 设置环境变量前缀，用以区分 Go 的系统环境变量
 	Viper.SetEnvPrefix("appenv")
