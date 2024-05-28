@@ -16,6 +16,7 @@
 # 数据库相关信息修改
 # 很重要的一步
 echo "DEV=1" > .env
+echo "TLS=false" > .env
 # 有上面的配置才会走 application.yaml
 # 修改好后就可以通过根目录 main.go 文件来启动开发
 go run main.go

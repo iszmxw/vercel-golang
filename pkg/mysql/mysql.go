@@ -10,6 +10,7 @@ import (
 	"gorm.io/gorm/schema"
 	"log"
 	"os"
+	"strings"
 )
 
 // DB gorm.DB 对象
@@ -29,8 +30,8 @@ func ConnectDB() *gorm.DB {
 		prefix   = config.GetString("database.mysql.prefix")
 		charset  = config.GetString("database.mysql.charset")
 	)
-	tls := "true"
-	if len(os.Getenv("TLS")) > 0 {
+	tls := "false"
+	if strings.EqualFold("true", strings.ToLower(os.Getenv("TLS"))) {
 		tls = os.Getenv("TLS")
 	}
 	dns := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?tls=%s&interpolateParams=true&charset=%s&parseTime=%t&loc=%s", username, password, host, port, database, tls, charset, true, "Local")

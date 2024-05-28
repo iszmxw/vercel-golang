@@ -1,11 +1,14 @@
 package redis
 
 import (
+	"crypto/tls"
 	"fmt"
 	"github.com/go-redis/redis"
 	"goapi/pkg/config"
 	"goapi/pkg/logger"
+	"os"
 	"reflect"
+	"strings"
 	"sync"
 	"time"
 )
@@ -32,22 +35,20 @@ func (rdb *Redis) ConnectDB(selectDB int) *Redis {
 		RedisPort = config.GetString("redis.port")
 		Pw        = config.GetString("redis.password")
 	)
-	if len(Pw) > 0 {
-		rdb.Client = redis.NewClient(&redis.Options{
-			// 走 tls 模式
-			//TLSConfig: &tls.Config{
-			//	MinVersion: tls.VersionTLS12,
-			//},
-			Addr:     RedisIp + ":" + RedisPort,
-			DB:       rdb.DefaultDB, // use default DB
-			Password: Pw,            // no password set
-		})
-	} else {
-		rdb.Client = redis.NewClient(&redis.Options{
-			Addr: RedisIp + ":" + RedisPort,
-			DB:   rdb.DefaultDB, // use default DB
-		})
+	option := &redis.Options{
+		Addr: RedisIp + ":" + RedisPort,
+		DB:   rdb.DefaultDB, // use default DB
 	}
+	if len(Pw) > 0 {
+		option.Password = Pw
+	}
+	if strings.EqualFold("true", strings.ToLower(os.Getenv("TLS"))) {
+		// 走 tls 模式
+		option.TLSConfig = &tls.Config{
+			MinVersion: tls.VersionTLS12,
+		}
+	}
+	rdb.Client = redis.NewClient(option)
 PING:
 	res, err := rdb.Client.Ping().Result()
 	if err != nil {
