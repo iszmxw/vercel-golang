@@ -1,7 +1,6 @@
 package redis
 
 import (
-	"crypto/tls"
 	"fmt"
 	"github.com/go-redis/redis"
 	"goapi/pkg/config"
@@ -35,10 +34,10 @@ func (rdb *Redis) ConnectDB(selectDB int) *Redis {
 	)
 	if len(Pw) > 0 {
 		rdb.Client = redis.NewClient(&redis.Options{
-			// vercel 中走 tls 模式
-			TLSConfig: &tls.Config{
-				MinVersion: tls.VersionTLS12,
-			},
+			// 走 tls 模式
+			//TLSConfig: &tls.Config{
+			//	MinVersion: tls.VersionTLS12,
+			//},
 			Addr:     RedisIp + ":" + RedisPort,
 			DB:       rdb.DefaultDB, // use default DB
 			Password: Pw,            // no password set
