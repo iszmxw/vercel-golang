@@ -1,0 +1,14 @@
+# 这些是支持的资金模型平台
+
+github: [iszmxw]
+patreon: iszmxw
+open_collective: # 替换为一个Open Collective用户名
+ko_fi: # 替换为一个Ko-fi用户名
+tidelift: # 替换为一个Tidelift平台名称/包名称，例如：npm/babel
+community_bridge: # 替换为一个Community Bridge项目名称，例如：cloud-foundry
+liberapay: # 替换为一个Liberapay用户名
+issuehunt: # 替换为一个IssueHunt用户名
+lfx_crowdfunding: # 替换为一个LFX Crowdfunding项目名称，例如：cloud-foundry
+polar: # 替换为一个Polar用户名
+buy_me_a_coffee: # 替换为一个Buy Me a Coffee用户名
+custom: # 替换为最多4个自定义赞助URL，例如：['link1', 'link2']
