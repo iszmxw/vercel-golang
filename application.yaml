@@ -18,7 +18,7 @@ ADDRESS_LIMIT: true
 
 # 数据库连接信息
 DB_CONNECTION: mysql
-DB_HOST: 192.168.192.125
+DB_HOST: 192.168.192.187
 # 端口
 DB_PORT: 3306
 # 表名
@@ -26,15 +26,15 @@ DB_DATABASE: vercel
 # 用户名
 DB_USERNAME: vercel
 # 密码
-DB_PASSWORD: zDbaSr7KNydyT47a
+DB_PASSWORD: taM8M2wFK8bRJ7cd
 # 数据表前缀
 DB_PREFIX: t_
 
 
 # redis配置
-REDIS_HOST: 192.168.192.125
+REDIS_HOST: 192.168.192.187
 # 没有密码，默认留空
-REDIS_PASSWORD: jhkdjhkjdhsIUTYURTU_kwaWyP
+REDIS_PASSWORD: jhkdjhkjdhsIUTYURTU_CpaJY5
 # 端口号
 REDIS_PORT: 6379
 # 默认用 0
