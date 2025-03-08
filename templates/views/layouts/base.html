@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>{{ title }}</title>
+	<link href="{{ static_url }}" rel="stylesheet">
+</head>
+<body>
+<header>
+	<h1>Hello, vercel-golang，Lest go!</h1>
+	<br>
+	<h2>欢迎来到 Gin + Jet 多级模板（Embed） 的 {{ title }}</h2>
+	<br>
+	<nav>
+		<a href="/">首页</a> | <a href="/about">关于</a> | <a href="/v/view">view</a> | <a target="_blank" href="/statics/css/common.css">common.css</a>
+	</nav>
+</header>
+<br>
+<main>
+	{{ block main() }}{{ end }}
+</main>
+<footer>
+	<p>版权所有 &copy; 2025</p>
+</footer>
+</body>
+</html>

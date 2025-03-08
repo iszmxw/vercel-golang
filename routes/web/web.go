@@ -11,7 +11,7 @@ func RegisterWebRoutes(router *gin.RouterGroup) {
 	webV1 := router.Group("/")
 	{
 		webV1.GET("/", GroupV1.IndexController.Index)
-		webV1.GET("/home", GroupV1.IndexController.Home)
-		webV1.GET("/v/view.html", GroupV1.IndexController.View)
+		webV1.GET("/about", GroupV1.IndexController.About)
+		webV1.GET("/v/view", GroupV1.IndexController.View)
 	}
 }

@@ -3,20 +3,20 @@ package bootstrap
 import (
 	"github.com/gin-gonic/gin"
 	"goapi/templates"
-	"html/template"
 	"io/fs"
+	"log"
 	"net/http"
 )
 
 func SetupTemplate(router *gin.Engine) {
 	// 将静态文件夹目录绑定到 statics 路由下访问
-	defaultFads, _ := fs.Sub(templates.Statics, "statics")
+	defaultFads, err := fs.Sub(templates.Statics, "statics")
+	if err != nil {
+		log.Fatalf("静态文件加载失败: %v", err)
+	}
 	router.StaticFS("/statics", http.FS(defaultFads))
-	// 调用函数列出所有文件
-	_template, _ := template.ParseFS(
-		templates.Default,
-		"default/*.html",
-		"default/**/*",
-	)
-	router.SetHTMLTemplate(_template)
+	err = templates.LoadTemplates("views")
+	if err != nil {
+		log.Fatalf("模板加载失败: %v", err)
+	}
 }

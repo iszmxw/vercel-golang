@@ -3,6 +3,7 @@ module goapi
 go 1.18
 
 require (
+	github.com/CloudyKit/jet/v6 v6.3.1
 	github.com/PuerkitoBio/goquery v1.8.1
 	github.com/axgle/mahonia v0.0.0-20180208002826-3358181d7394
 	github.com/forgoer/openssl v1.6.0
@@ -29,6 +30,7 @@ require (
 )
 
 require (
+	github.com/CloudyKit/fastprinter v0.0.0-20200109182630-33d98a066a53 // indirect
 	github.com/andybalholm/cascadia v1.3.1 // indirect
 	github.com/bradfitz/gomemcache v0.0.0-20220106215444-fb4bf637b56d // indirect
 	github.com/bytedance/sonic v1.9.1 // indirect
