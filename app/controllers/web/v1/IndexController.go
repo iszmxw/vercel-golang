@@ -3,10 +3,32 @@ package v1
 import (
 	"github.com/gin-gonic/gin"
 	"goapi/pkg/echo"
+	"goapi/pkg/portscanner"
+	"time"
 )
 
 type IndexController struct {
 	BaseController
+}
+
+func (h *IndexController) Test(c *gin.Context) {
+	ip := c.Query("ip")
+	PortRange := c.Query("PortRange")
+	if len(ip) == 0 {
+		echo.Error(c, "ParamsLost", "ip 参数不能为空")
+		return
+	}
+	scanner := portscanner.Scanner{
+		//PortRange:   "12111-12120", // 端口范围
+		IP:          ip, // 目标IP
+		Timeout:     300 * time.Millisecond,
+		Concurrency: 100, // 并发数
+	}
+	if len(PortRange) > 0 {
+		scanner.PortRange = PortRange
+	}
+	results := scanner.Run()
+	echo.Success(c, results, "端口扫描成功")
 }
 
 func (h *IndexController) Index(c *gin.Context) {
