@@ -1,5 +1,8 @@
 {
   "version": 2,
+  "buildCommand": "echo 'Building Go application'",
+  "installCommand": "echo 'No npm dependencies'",
+  "framework": null,
   "builds": [
     {
       "use": "@vercel/go",
