@@ -18,7 +18,7 @@ ADDRESS_LIMIT: true
 
 # 数据库连接信息
 DB_CONNECTION: mysql
-DB_HOST: 192.168.192.187
+DB_HOST: 192.168.23.4
 # 端口
 DB_PORT: 3306
 # 表名
